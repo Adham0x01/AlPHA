@@ -1,0 +1,2667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Adham Khalid | Junior Cybersecurity Freelancer</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root{
+  --bg:#071018;
+  --bg-2:#0a141e;
+  --panel:#0d1924;
+  --panel-2:#101f2d;
+
+  --border:#1b3445;
+  --border-light:#234253;
+
+  --text:#edf6f7;
+  --muted:#91a8b7;
+  --faint:#5d7483;
+
+  --teal:#42d4d0;
+  --teal-dark:#1d7779;
+
+  --amber:#f0b44d;
+  --amber-dark:#765521;
+
+  --green:#72dc91;
+  --red:#e87575;
+
+  --max:1120px;
+  --radius:8px;
+}
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:
+    radial-gradient(circle at 80% 5%, rgba(66,212,208,.07), transparent 25%),
+    radial-gradient(circle at 10% 20%, rgba(240,180,77,.035), transparent 25%),
+    var(--bg);
+  color:var(--text);
+  font-family:'Inter',sans-serif;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  opacity:.18;
+
+  background-image:
+    linear-gradient(rgba(66,212,208,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(66,212,208,.035) 1px, transparent 1px);
+
+  background-size:40px 40px;
+
+  mask-image:linear-gradient(to bottom, black, transparent 85%);
+}
+
+::selection{
+  background:var(--teal);
+  color:#041013;
+}
+
+a{
+  color:inherit;
+}
+
+h1,h2,h3,h4{
+  font-family:'Space Grotesk',sans-serif;
+  margin:0;
+}
+
+.mono{
+  font-family:'DM Mono',monospace;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container{
+  width:min(var(--max), calc(100% - 48px));
+  margin:auto;
+}
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+
+  background:rgba(7,16,24,.86);
+  backdrop-filter:blur(14px);
+
+  border-bottom:1px solid rgba(66,212,208,.10);
+}
+
+.nav-inner{
+  height:68px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  text-decoration:none;
+
+  font-family:'Space Grotesk',sans-serif;
+  font-size:15px;
+  font-weight:600;
+}
+
+.brand-mark{
+  width:9px;
+  height:9px;
+  border-radius:50%;
+
+  background:var(--teal);
+
+  box-shadow:
+    0 0 0 4px rgba(66,212,208,.09),
+    0 0 18px rgba(66,212,208,.35);
+}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:28px;
+}
+
+.nav-links a{
+  text-decoration:none;
+
+  font-family:'DM Mono',monospace;
+  font-size:12px;
+
+  color:var(--muted);
+
+  transition:.2s ease;
+}
+
+.nav-links a:hover{
+  color:var(--teal);
+}
+
+@media(max-width:700px){
+  .nav-links{
+    display:none;
+  }
+
+  .container{
+    width:min(var(--max), calc(100% - 32px));
+  }
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+  padding:92px 0 80px;
+
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:70px;
+
+  align-items:center;
+}
+
+.eyebrow{
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  color:var(--teal);
+
+  font-family:'DM Mono',monospace;
+  font-size:11px;
+  letter-spacing:.08em;
+
+  margin-bottom:20px;
+}
+
+.eyebrow::before{
+  content:"";
+  width:24px;
+  height:1px;
+
+  background:var(--teal);
+}
+
+.hero h1{
+  font-size:clamp(42px,6vw,70px);
+  line-height:.98;
+  letter-spacing:-.045em;
+
+  max-width:700px;
+}
+
+.hero h1 span{
+  color:var(--teal);
+}
+
+.hero-description{
+  margin-top:25px;
+
+  max-width:650px;
+
+  color:var(--muted);
+  font-size:16px;
+}
+
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+
+  margin-top:30px;
+}
+
+.button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:11px 17px;
+
+  border-radius:5px;
+
+  text-decoration:none;
+
+  font-size:13px;
+  font-weight:600;
+
+  transition:.2s ease;
+}
+
+.button-primary{
+  background:var(--teal);
+  color:#051013;
+}
+
+.button-primary:hover{
+  background:#65e1dd;
+  transform:translateY(-2px);
+}
+
+.button-secondary{
+  border:1px solid var(--border);
+  color:var(--text);
+  background:rgba(255,255,255,.015);
+}
+
+.button-secondary:hover{
+  border-color:var(--teal);
+  color:var(--teal);
+}
+
+.hero-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:18px;
+
+  margin-top:25px;
+
+  color:var(--faint);
+
+  font-family:'DM Mono',monospace;
+  font-size:11px;
+}
+
+.hero-meta span{
+  display:flex;
+  align-items:center;
+  gap:7px;
+}
+
+.hero-meta span::before{
+  content:"";
+  width:5px;
+  height:5px;
+
+  background:var(--amber);
+
+  border-radius:50%;
+}
+
+/* =========================================================
+   SOC PANEL
+========================================================= */
+
+.soc-panel{
+  position:relative;
+
+  border:1px solid var(--border);
+  border-radius:10px;
+
+  background:
+    linear-gradient(145deg, rgba(66,212,208,.045), transparent 50%),
+    var(--panel);
+
+  overflow:hidden;
+
+  box-shadow:
+    0 20px 70px rgba(0,0,0,.25);
+}
+
+.soc-header{
+  padding:13px 16px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  border-bottom:1px solid var(--border);
+}
+
+.window-dots{
+  display:flex;
+  gap:6px;
+}
+
+.window-dots i{
+  display:block;
+
+  width:7px;
+  height:7px;
+
+  border-radius:50%;
+
+  background:var(--border-light);
+}
+
+.soc-title{
+  color:var(--faint);
+
+  font-family:'DM Mono',monospace;
+  font-size:10px;
+}
+
+.status{
+  color:var(--green);
+
+  font-family:'DM Mono',monospace;
+  font-size:10px;
+}
+
+.soc-body{
+  padding:20px;
+}
+
+.signal{
+  padding:18px;
+
+  border:1px solid var(--border);
+  border-radius:7px;
+
+  background:rgba(0,0,0,.13);
+
+  margin-bottom:16px;
+}
+
+.signal-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  margin-bottom:16px;
+}
+
+.signal-label{
+  color:var(--muted);
+
+  font-family:'DM Mono',monospace;
+  font-size:10px;
+}
+
+.signal-value{
+  color:var(--amber);
+
+  font-family:'DM Mono',monospace;
+  font-size:10px;
+}
+
+.signal-line{
+  height:5px;
+
+  background:#132733;
+
+  border-radius:10px;
+
+  overflow:hidden;
+}
+
+.signal-line span{
+  display:block;
+  height:100%;
+
+  width:72%;
+
+  background:linear-gradient(
+    90deg,
+    var(--teal),
+    var(--amber)
+  );
+}
+
+.flow{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+
+  margin-top:18px;
+}
+
+.flow-item{
+  min-height:76px;
+
+  padding:12px;
+
+  border:1px solid var(--border);
+  border-radius:6px;
+
+  background:#0a151f;
+}
+
+.flow-number{
+  color:var(--faint);
+
+  font-family:'DM Mono',monospace;
+  font-size:9px;
+}
+
+.flow-name{
+  margin-top:9px;
+
+  font-family:'DM Mono',monospace;
+  font-size:11px;
+
+  color:var(--text);
+}
+
+.flow-item.active{
+  border-color:rgba(66,212,208,.45);
+}
+
+.flow-item.active .flow-name{
+  color:var(--teal);
+}
+
+.log-lines{
+  margin-top:16px;
+
+  font-family:'DM Mono',monospace;
+  font-size:9px;
+
+  color:var(--faint);
+
+  line-height:2;
+}
+
+.log-lines .green{
+  color:var(--green);
+}
+
+.log-lines .amber{
+  color:var(--amber);
+}
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+section{
+  padding:88px 0;
+
+  border-top:1px solid rgba(66,212,208,.08);
+}
+
+.section-label{
+  display:flex;
+  align-items:center;
+  gap:12px;
+
+  margin-bottom:35px;
+}
+
+.section-number{
+  color:var(--amber);
+
+  font-family:'DM Mono',monospace;
+  font-size:11px;
+}
+
+.section-label h2{
+  font-size:27px;
+  letter-spacing:-.025em;
+}
+
+.section-description{
+  color:var(--muted);
+
+  max-width:680px;
+
+  margin-top:-20px;
+  margin-bottom:35px;
+
+  font-size:14px;
+}
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.service-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+
+.service-card{
+  padding:22px;
+
+  border:1px solid var(--border);
+  border-radius:7px;
+
+  background:rgba(13,25,36,.75);
+
+  transition:.2s ease;
+}
+
+.service-card:hover{
+  transform:translateY(-3px);
+
+  border-color:rgba(66,212,208,.45);
+
+  background:var(--panel-2);
+}
+
+.service-index{
+  color:var(--faint);
+
+  font-family:'DM Mono',monospace;
+  font-size:10px;
+}
+
+.service-icon{
+  width:30px;
+  height:30px;
+
+  margin:20px 0 15px;
+
+  display:grid;
+  place-items:center;
+
+  border:1px solid var(--border);
+
+  color:var(--teal);
+
+  font-family:'DM Mono',monospace;
+  font-size:11px;
+}
+
+.service-card h3{
+  font-size:15px;
+  margin-bottom:9px;
+}
+
+.service-card p{
+  margin:0;
+
+  color:var(--muted);
+
+  font-size:13px;
+}
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-grid{
+  display:grid;
+  grid-template-columns:1.5fr .8fr;
+  gap:70px;
+}
+
+.about-copy{
+  color:var(--muted);
+  font-size:15px;
+  max-width:700px;
+}
+
+.facts{
+  display:flex;
+  flex-direction:column;
+  gap:0;
+}
+
+.fact{
+  padding:17px 0;
+
+  border-bottom:1px solid var(--border);
+}
+
+.fact:first-child{
+  border-top:1px solid var(--border);
+}
+
+.fact-label{
+  color:var(--faint);
+
+  font-family:'DM Mono',monospace;
+  font-size:9px;
+
+  margin-bottom:4px;
+}
+
+.fact-value{
+  color:var(--text);
+  font-size:13px;
+}
+
+/* =========================================================
+   TRAINING TIMELINE
+========================================================= */
+
+.timeline{
+  position:relative;
+  margin-top:10px;
+}
+
+.timeline::before{
+  content:"";
+
+  position:absolute;
+
+  left:10px;
+  top:10px;
+  bottom:10px;
+
+  width:1px;
+
+  background:linear-gradient(
+    to bottom,
+    var(--teal),
+    var(--border),
+    var(--amber)
+  );
+}
+
+.training-item{
+  position:relative;
+
+  display:grid;
+  grid-template-columns:30px 150px 1fr;
+
+  gap:20px;
+
+  padding:0 0 30px;
+}
+
+.training-dot{
+  position:relative;
+  z-index:2;
+
+  width:21px;
+  height:21px;
+
+  display:grid;
+  place-items:center;
+
+  border:1px solid var(--teal);
+  border-radius:50%;
+
+  background:var(--bg);
+
+  color:var(--teal);
+
+  font-family:'DM Mono',monospace;
+  font-size:8px;
+}
+
+.training-item.capstone .training-dot{
+  border-color:var(--amber);
+  color:var(--amber);
+}
+
+.training-module{
+  color:var(--faint);
+
+  font-family:'DM Mono',monospace;
+  font-size:10px;
+}
+
+.training-name{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:15px;
+  font-weight:600;
+}
+
+.training-desc{
+  color:var(--muted);
+
+  font-size:12.5px;
+
+  margin-top:4px;
+}
+
+.badge{
+  display:inline-block;
+
+  margin-left:8px;
+  padding:3px 7px;
+
+  border:1px solid rgba(66,212,208,.25);
+  border-radius:3px;
+
+  color:var(--teal);
+
+  font-family:'DM Mono',monospace;
+  font-size:8px;
+}
+
+.badge-progress{
+  color:var(--amber);
+  border-color:rgba(240,180,77,.25);
+}
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.project{
+  display:grid;
+  grid-template-columns:1fr .9fr;
+
+  gap:45px;
+
+  padding:40px 0;
+
+  border-top:1px solid var(--border);
+}
+
+.project:first-of-type{
+  border-top:0;
+  padding-top:0;
+}
+
+.project:nth-child(even){
+  grid-template-columns:.9fr 1fr;
+}
+
+.project:nth-child(even) .project-info{
+  order:2;
+}
+
+.project:nth-child(even) .project-visual{
+  order:1;
+}
+
+.project-number{
+  color:var(--amber);
+
+  font-family:'DM Mono',monospace;
+  font-size:10px;
+
+  margin-bottom:10px;
+}
+
+.project h3{
+  font-size:22px;
+  letter-spacing:-.025em;
+}
+
+.project-tools{
+  margin-top:7px;
+
+  color:var(--teal);
+
+  font-family:'DM Mono',monospace;
+  font-size:10px;
+}
+
+.project-description{
+  color:var(--muted);
+
+  font-size:13.5px;
+
+  margin-top:18px;
+}
+
+.project ul{
+  margin:20px 0 0;
+  padding-left:18px;
+
+  color:var(--muted);
+
+  font-size:12.5px;
+}
+
+.project li{
+  margin-bottom:8px;
+}
+
+.project-visual{
+  min-height:240px;
+
+  border:1px solid var(--border);
+  border-radius:8px;
+
+  background:#08131c;
+
+  overflow:hidden;
+}
+
+.visual-header{
+  display:flex;
+  justify-content:space-between;
+
+  padding:11px 14px;
+
+  border-bottom:1px solid var(--border);
+
+  color:var(--faint);
+
+  font-family:'DM Mono',monospace;
+  font-size:9px;
+}
+
+.visual-content{
+  padding:22px;
+}
+
+/* network visual */
+
+.network-map{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+
+  max-width:330px;
+  margin:auto;
+}
+
+.network-node{
+  padding:10px 13px;
+
+  border:1px solid var(--border);
+  border-radius:5px;
+
+  background:#0d1b27;
+
+  text-align:center;
+
+  color:var(--muted);
+
+  font-family:'DM Mono',monospace;
+  font-size:10px;
+}
+
+.network-node.core{
+  border-color:var(--teal);
+  color:var(--teal);
+}
+
+.network-branches{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+}
+
+/* terminal */
+
+.terminal{
+  height:100%;
+
+  padding:20px;
+
+  font-family:'DM Mono',monospace;
+  font-size:10.5px;
+
+  line-height:2;
+
+  color:var(--muted);
+}
+
+.terminal .command{
+  color:var(--teal);
+}
+
+.terminal .success{
+  color:var(--green);
+}
+
+.terminal .warning{
+  color:var(--amber);
+}
+
+.terminal .muted{
+  color:var(--faint);
+}
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+
+.skill-card{
+  padding:23px;
+
+  border:1px solid var(--border);
+  border-radius:7px;
+
+  background:rgba(13,25,36,.65);
+}
+
+.skill-title{
+  color:var(--teal);
+
+  font-family:'DM Mono',monospace;
+  font-size:10px;
+
+  margin-bottom:16px;
+}
+
+.tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+}
+
+.tag{
+  padding:6px 9px;
+
+  border:1px solid var(--border);
+
+  border-radius:4px;
+
+  color:var(--muted);
+
+  font-size:11px;
+}
+
+/* =========================================================
+   EDUCATION
+========================================================= */
+
+.education{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:30px;
+
+  padding:25px;
+
+  border:1px solid var(--border);
+  border-radius:8px;
+
+  background:linear-gradient(
+    90deg,
+    rgba(66,212,208,.035),
+    transparent
+  );
+}
+
+.education h3{
+  font-size:18px;
+}
+
+.education p{
+  color:var(--muted);
+  font-size:13px;
+
+  margin:8px 0 0;
+}
+
+.education-year{
+  white-space:nowrap;
+
+  color:var(--amber);
+
+  font-family:'DM Mono',monospace;
+  font-size:10px;
+}
+
+/* =========================================================
+   ADDITIONAL TRAINING
+========================================================= */
+
+.training-extra{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+.extra-card{
+  padding:24px;
+
+  border:1px solid var(--border);
+  border-radius:7px;
+
+  background:var(--panel);
+}
+
+.extra-card h3{
+  font-size:16px;
+}
+
+.extra-card p{
+  color:var(--muted);
+
+  font-size:13px;
+
+  margin:10px 0 0;
+}
+
+.extra-label{
+  color:var(--faint);
+
+  font-family:'DM Mono',monospace;
+  font-size:9px;
+
+  margin-top:18px;
+}
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-section{
+  padding:100px 0 110px;
+}
+
+.contact-box{
+  position:relative;
+
+  padding:45px;
+
+  border:1px solid var(--border);
+  border-radius:10px;
+
+  background:
+    radial-gradient(circle at 90% 20%, rgba(66,212,208,.08), transparent 25%),
+    var(--panel);
+
+  overflow:hidden;
+}
+
+.contact-box::after{
+  content:"SOC / SECURITY MONITORING";
+
+  position:absolute;
+
+  right:25px;
+  bottom:20px;
+
+  color:rgba(66,212,208,.06);
+
+  font-family:'DM Mono',monospace;
+  font-size:35px;
+  font-weight:500;
+}
+
+.contact-box h2{
+  font-size:34px;
+  letter-spacing:-.035em;
+
+  max-width:600px;
+}
+
+.contact-box p{
+  max-width:600px;
+
+  color:var(--muted);
+
+  margin:15px 0 25px;
+
+  font-size:14px;
+}
+
+.contact-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+  border-top:1px solid var(--border);
+
+  padding:25px 0 35px;
+}
+
+.footer-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:20px;
+}
+
+.footer-inner span{
+  color:var(--faint);
+
+  font-family:'DM Mono',monospace;
+  font-size:9px;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:850px){
+
+  .hero{
+    grid-template-columns:1fr;
+    gap:45px;
+
+    padding-top:65px;
+  }
+
+  .about-grid{
+    grid-template-columns:1fr;
+    gap:35px;
+  }
+
+  .service-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .project,
+  .project:nth-child(even){
+    grid-template-columns:1fr;
+    gap:25px;
+  }
+
+  .project:nth-child(even) .project-info,
+  .project:nth-child(even) .project-visual{
+    order:initial;
+  }
+
+}
+
+@media(max-width:620px){
+
+  section{
+    padding:65px 0;
+  }
+
+  .hero{
+    padding:55px 0 65px;
+  }
+
+  .hero h1{
+    font-size:44px;
+  }
+
+  .service-grid{
+    grid-template-columns:1fr;
+  }
+
+  .training-item{
+    grid-template-columns:28px 1fr;
+    gap:15px;
+  }
+
+  .training-module{
+    grid-column:2;
+  }
+
+  .training-content{
+    grid-column:2;
+  }
+
+  .skills-grid{
+    grid-template-columns:1fr;
+  }
+
+  .training-extra{
+    grid-template-columns:1fr;
+  }
+
+  .education{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .contact-box{
+    padding:28px;
+  }
+
+  .contact-box h2{
+    font-size:27px;
+  }
+
+  .flow{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .footer-inner{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<nav>
+  <div class="container nav-inner">
+
+    <a href="#top" class="brand">
+      <span class="brand-mark"></span>
+      Adham Khalid
+    </a>
+
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#training">Training</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+  </div>
+</nav>
+
+
+<main id="top">
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<header class="hero container">
+
+  <div>
+
+    <div class="eyebrow">
+      JUNIOR CYBERSECURITY FREELANCER
+    </div>
+
+    <h1>
+      Turning security data into
+      <span>actionable findings.</span>
+    </h1>
+
+    <p class="hero-description">
+      Junior Cybersecurity Freelancer focused on security log analysis,
+      SIEM monitoring, network traffic analysis, and initial incident
+      investigation.
+    </p>
+
+    <div class="hero-actions">
+
+      <a href="#services" class="button button-primary">
+        View Services
+      </a>
+
+      <a href="#projects" class="button button-secondary">
+        View Projects
+      </a>
+
+      <a
+        href="https://linkedin.com/in/adham-khalid-"
+        target="_blank"
+        rel="noopener"
+        class="button button-secondary">
+        LinkedIn
+      </a>
+
+    </div>
+
+    <div class="hero-meta">
+
+      <span>Giza, Egypt</span>
+
+      <span>
+        Nile University — Computer Engineering, Year 4
+      </span>
+
+    </div>
+
+  </div>
+
+
+  <!-- SOC VISUAL -->
+
+  <div class="soc-panel">
+
+    <div class="soc-header">
+
+      <div class="window-dots">
+        <i></i>
+        <i></i>
+        <i></i>
+      </div>
+
+      <div class="soc-title">
+        security-monitoring.workflow
+      </div>
+
+      <div class="status">
+        TRAINING MODE
+      </div>
+
+    </div>
+
+    <div class="soc-body">
+
+      <div class="signal">
+
+        <div class="signal-top">
+
+          <span class="signal-label">
+            SECURITY DATA FLOW
+          </span>
+
+          <span class="signal-value">
+            ANALYSIS
+          </span>
+
+        </div>
+
+        <div class="signal-line">
+          <span></span>
+        </div>
+
+      </div>
+
+
+      <div class="flow">
+
+        <div class="flow-item active">
+          <div class="flow-number">01</div>
+          <div class="flow-name">SIEM</div>
+        </div>
+
+        <div class="flow-item">
+          <div class="flow-number">02</div>
+          <div class="flow-name">ALERT</div>
+        </div>
+
+        <div class="flow-item">
+          <div class="flow-number">03</div>
+          <div class="flow-name">LOGS</div>
+        </div>
+
+        <div class="flow-item">
+          <div class="flow-number">04</div>
+          <div class="flow-name">EVENTS</div>
+        </div>
+
+        <div class="flow-item">
+          <div class="flow-number">05</div>
+          <div class="flow-name">TRAFFIC</div>
+        </div>
+
+        <div class="flow-item active">
+          <div class="flow-number">06</div>
+          <div class="flow-name">FINDINGS</div>
+        </div>
+
+      </div>
+
+
+      <div class="log-lines">
+
+        <div>
+          <span class="green">[+]</span>
+          security events available for review
+        </div>
+
+        <div>
+          <span class="green">[+]</span>
+          network traffic available for analysis
+        </div>
+
+        <div>
+          <span class="amber">[*]</span>
+          investigate → correlate → document
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- =========================================================
+     SERVICES
+========================================================= -->
+
+<section id="services">
+
+  <div class="container">
+
+    <div class="section-label">
+      <span class="section-number">01</span>
+      <h2>What I Can Help With</h2>
+    </div>
+
+    <p class="section-description">
+      Entry-level cybersecurity services focused on analyzing provided
+      security data, identifying relevant activity, and documenting
+      findings clearly.
+    </p>
+
+
+    <div class="service-grid">
+
+      <article class="service-card">
+
+        <div class="service-index">SERVICE / 01</div>
+
+        <div class="service-icon">LOG</div>
+
+        <h3>Security Log Analysis</h3>
+
+        <p>
+          Analyze provided security logs and identify relevant or
+          potentially suspicious events.
+        </p>
+
+      </article>
+
+
+      <article class="service-card">
+
+        <div class="service-index">SERVICE / 02</div>
+
+        <div class="service-icon">SIEM</div>
+
+        <h3>SIEM Investigation</h3>
+
+        <p>
+          Review security events and alerts using Splunk and apply
+          basic event correlation techniques.
+        </p>
+
+      </article>
+
+
+      <article class="service-card">
+
+        <div class="service-index">SERVICE / 03</div>
+
+        <div class="service-icon">WIN</div>
+
+        <h3>Windows Event Analysis</h3>
+
+        <p>
+          Examine Windows Event Viewer data to understand relevant
+          system and security activity.
+        </p>
+
+      </article>
+
+
+      <article class="service-card">
+
+        <div class="service-index">SERVICE / 04</div>
+
+        <div class="service-icon">NET</div>
+
+        <h3>Network Traffic Analysis</h3>
+
+        <p>
+          Inspect network traffic with Wireshark to understand
+          packets, protocols, and communication behavior.
+        </p>
+
+      </article>
+
+
+      <article class="service-card">
+
+        <div class="service-index">SERVICE / 05</div>
+
+        <div class="service-icon">IR</div>
+
+        <h3>Initial Incident Investigation</h3>
+
+        <p>
+          Organize available evidence, investigate defined suspicious
+          activity, and summarize initial findings.
+        </p>
+
+      </article>
+
+
+      <article class="service-card">
+
+        <div class="service-index">SERVICE / 06</div>
+
+        <div class="service-icon">RPT</div>
+
+        <h3>Security Reporting</h3>
+
+        <p>
+          Turn technical observations into clear and structured
+          investigation findings.
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section id="about">
+
+  <div class="container">
+
+    <div class="section-label">
+      <span class="section-number">02</span>
+      <h2>About</h2>
+    </div>
+
+
+    <div class="about-grid">
+
+      <div class="about-copy">
+
+        I'm a fourth-year Computer Engineering student at Nile University
+        building a practical foundation in Cybersecurity, Security
+        Operations, and Incident Response through the Digital Egypt
+        Pioneers Initiative (DEPI).
+
+        <br><br>
+
+        My training combines networking, Windows and Linux fundamentals,
+        security concepts, SIEM operations, log analysis, network traffic
+        analysis, and incident response.
+
+        <br><br>
+
+        I am particularly interested in the operational side of security:
+        understanding what an alert means, analyzing the available data,
+        identifying relevant activity, and documenting clear findings.
+
+      </div>
+
+
+      <div class="facts">
+
+        <div class="fact">
+
+          <div class="fact-label">
+            FOCUS
+          </div>
+
+          <div class="fact-value">
+            SOC Operations &amp; Security Monitoring
+          </div>
+
+        </div>
+
+
+        <div class="fact">
+
+          <div class="fact-label">
+            SPECIALIZATION
+          </div>
+
+          <div class="fact-value">
+            Log &amp; Network Traffic Analysis
+          </div>
+
+        </div>
+
+
+        <div class="fact">
+
+          <div class="fact-label">
+            TRAINING
+          </div>
+
+          <div class="fact-value">
+            DEPI — Cyber Security Incident Response Analyst
+          </div>
+
+        </div>
+
+
+        <div class="fact">
+
+          <div class="fact-label">
+            LANGUAGES
+          </div>
+
+          <div class="fact-value">
+            Arabic (Native), English (Professional Working Proficiency)
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     DEPI TRAINING
+========================================================= -->
+
+<section id="training">
+
+  <div class="container">
+
+    <div class="section-label">
+      <span class="section-number">03</span>
+      <h2>DEPI Training</h2>
+    </div>
+
+    <p class="section-description">
+      Cyber Security Incident Response Analyst track — Digital Egypt
+      Pioneers Initiative. Practical training across networking,
+      operating systems, security, incident response, SIEM, and
+      SOC operations.
+    </p>
+
+
+    <div class="timeline">
+
+
+      <div class="training-item">
+
+        <div class="training-dot">✓</div>
+
+        <div class="training-module">
+          MODULE 01
+        </div>
+
+        <div class="training-content">
+
+          <div class="training-name">
+            Network Fundamentals
+
+            <span class="badge">
+              COMPLETED
+            </span>
+          </div>
+
+          <div class="training-desc">
+            IP addressing, networking concepts, OSI model, packets,
+            frames, LAN technologies, and network design.
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="training-item">
+
+        <div class="training-dot">✓</div>
+
+        <div class="training-module">
+          MODULE 02
+        </div>
+
+        <div class="training-content">
+
+          <div class="training-name">
+            OS Fundamentals — Windows &amp; Linux
+
+            <span class="badge">
+              COMPLETED
+            </span>
+          </div>
+
+          <div class="training-desc">
+            Windows fundamentals, system configuration, security tools,
+            NTFS, UAC, Windows Registry, and Linux fundamentals.
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="training-item">
+
+        <div class="training-dot">✓</div>
+
+        <div class="training-module">
+          MODULE 03
+        </div>
+
+        <div class="training-content">
+
+          <div class="training-name">
+            Security &amp; Attack Techniques
+
+            <span class="badge">
+              COMPLETED
+            </span>
+          </div>
+
+          <div class="training-desc">
+            Security concepts, attack techniques, network security,
+            proxies, firewalls, and security controls.
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="training-item">
+
+        <div class="training-dot">✓</div>
+
+        <div class="training-module">
+          MODULE 04
+        </div>
+
+        <div class="training-content">
+
+          <div class="training-name">
+            Incident Response &amp; Digital Forensics
+
+            <span class="badge">
+              COMPLETED
+            </span>
+          </div>
+
+          <div class="training-desc">
+            Incident response concepts, investigation workflow,
+            evidence handling, and digital forensics fundamentals.
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="training-item">
+
+        <div class="training-dot">✓</div>
+
+        <div class="training-module">
+          MODULE 05
+        </div>
+
+        <div class="training-content">
+
+          <div class="training-name">
+            SIEM
+
+            <span class="badge">
+              COMPLETED
+            </span>
+          </div>
+
+          <div class="training-desc">
+            Security event monitoring, log analysis, alert investigation,
+            and SIEM concepts using Splunk.
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="training-item">
+
+        <div class="training-dot">✓</div>
+
+        <div class="training-module">
+          MODULE 06
+        </div>
+
+        <div class="training-content">
+
+          <div class="training-name">
+            SOC Operations &amp; Automation
+
+            <span class="badge">
+              COMPLETED
+            </span>
+          </div>
+
+          <div class="training-desc">
+            SOC workflows, security monitoring, alert handling,
+            investigation concepts, and automation fundamentals.
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="training-item capstone">
+
+        <div class="training-dot">→</div>
+
+        <div class="training-module">
+          CAPSTONE
+        </div>
+
+        <div class="training-content">
+
+          <div class="training-name">
+            Capstone Project
+
+            <span class="badge badge-progress">
+              IN PROGRESS
+            </span>
+          </div>
+
+          <div class="training-desc">
+            Applying the training track knowledge to a practical
+            cybersecurity project.
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     PROJECTS
+========================================================= -->
+
+<section id="projects">
+
+  <div class="container">
+
+    <div class="section-label">
+      <span class="section-number">04</span>
+      <h2>Projects &amp; Case Studies</h2>
+    </div>
+
+
+    <!-- PROJECT 01 -->
+
+    <article class="project">
+
+      <div class="project-info">
+
+        <div class="project-number">
+          CASE STUDY / 01
+        </div>
+
+        <h3>
+          University Network Design &amp; Subnetting
+        </h3>
+
+        <div class="project-tools">
+          eNSP · FLSM · VLSM · Network Design
+        </div>
+
+        <p class="project-description">
+          Designed and simulated a university network while applying
+          IP addressing, subnetting, FLSM, VLSM, routing, and network
+          segmentation concepts.
+        </p>
+
+        <ul>
+
+          <li>
+            Designed a multi-department university network using eNSP.
+          </li>
+
+          <li>
+            Applied FLSM and VLSM to allocate network resources.
+          </li>
+
+          <li>
+            Analyzed network IDs, broadcast addresses, usable host
+            ranges, and subnet capacity.
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="project-visual">
+
+        <div class="visual-header">
+          <span>network-design</span>
+          <span>eNSP</span>
+        </div>
+
+        <div class="visual-content">
+
+          <div class="network-map">
+
+            <div class="network-node core">
+              RTR
+            </div>
+
+            <div class="network-branches">
+
+              <div class="network-node">
+                SW-1
+              </div>
+
+              <div class="network-node">
+                SW-2
+              </div>
+
+              <div class="network-node">
+                SW-3
+              </div>
+
+            </div>
+
+            <div class="network-branches">
+
+              <div class="network-node">
+                DORMS
+              </div>
+
+              <div class="network-node">
+                LABS
+              </div>
+
+              <div class="network-node">
+                ADMIN
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- PROJECT 02 -->
+
+    <article class="project">
+
+      <div class="project-info">
+
+        <div class="project-number">
+          CASE STUDY / 02
+        </div>
+
+        <h3>
+          NGFW Firewall Policy Design
+        </h3>
+
+        <div class="project-tools">
+          Network Security · Firewall Rules
+        </div>
+
+        <p class="project-description">
+          Designed a firewall rulebase for a Next-Generation Firewall
+          based on defined network security requirements.
+        </p>
+
+        <ul>
+
+          <li>
+            Translated security requirements into structured firewall
+            policies.
+          </li>
+
+          <li>
+            Applied access-control and traffic-filtering concepts.
+          </li>
+
+          <li>
+            Practiced organizing security rules according to defined
+            network requirements.
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="project-visual">
+
+        <div class="visual-header">
+          <span>firewall-policy</span>
+          <span>NGFW</span>
+        </div>
+
+        <div class="terminal">
+
+          <div>
+            <span class="command">
+              firewall:~$ policy_review
+            </span>
+          </div>
+
+          <div>
+            security requirements reviewed
+          </div>
+
+          <div>
+            access rules structured
+          </div>
+
+          <div>
+            traffic controls documented
+          </div>
+
+          <br>
+
+          <div>
+            <span class="success">
+              STATUS:
+            </span>
+
+            policy review completed
+          </div>
+
+          <div class="muted">
+            training assignment / security policy design
+          </div>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- PROJECT 03 -->
+
+    <article class="project">
+
+      <div class="project-info">
+
+        <div class="project-number">
+          CASE STUDY / 03
+        </div>
+
+        <h3>
+          Security Log &amp; Event Analysis
+        </h3>
+
+        <div class="project-tools">
+          Splunk · Windows Event Viewer · SIEM
+        </div>
+
+        <p class="project-description">
+          Practiced analyzing security events and logs to understand
+          relevant activity, investigate potentially suspicious events,
+          and document findings.
+        </p>
+
+        <ul>
+
+          <li>
+            Analyzed security events using Splunk and Windows Event Viewer.
+          </li>
+
+          <li>
+            Applied basic event correlation and security monitoring
+            concepts.
+          </li>
+
+          <li>
+            Documented observations and investigation findings.
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="project-visual">
+
+        <div class="visual-header">
+          <span>soc-analysis</span>
+          <span>training-lab</span>
+        </div>
+
+        <div class="terminal">
+
+          <div>
+            <span class="command">
+              soc@analysis:~$ review_events
+            </span>
+          </div>
+
+          <div>
+            source   : Windows Event Logs
+          </div>
+
+          <div>
+            platform : Splunk
+          </div>
+
+          <div>
+            task     : Event correlation
+          </div>
+
+          <br>
+
+          <div>
+            event review
+            <span class="success">
+              COMPLETE
+            </span>
+          </div>
+
+          <div>
+            relevant events
+            <span class="success">
+              REVIEWED
+            </span>
+          </div>
+
+          <div>
+            findings documented
+            <span class="success">
+              YES
+            </span>
+          </div>
+
+          <div class="muted">
+            training exercise / not production data
+          </div>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- PROJECT 04 -->
+
+    <article class="project">
+
+      <div class="project-info">
+
+        <div class="project-number">
+          CASE STUDY / 04
+        </div>
+
+        <h3>
+          Network Traffic Analysis
+        </h3>
+
+        <div class="project-tools">
+          Wireshark · Packet Analysis
+        </div>
+
+        <p class="project-description">
+          Practiced inspecting captured network traffic to understand
+          packets, protocols, communication behavior, and relevant
+          network activity.
+        </p>
+
+        <ul>
+
+          <li>
+            Used Wireshark to inspect network traffic.
+          </li>
+
+          <li>
+            Applied networking fundamentals to packet and protocol analysis.
+          </li>
+
+          <li>
+            Practiced identifying relevant traffic during security
+            analysis exercises.
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="project-visual">
+
+        <div class="visual-header">
+          <span>traffic-analysis</span>
+          <span>Wireshark</span>
+        </div>
+
+        <div class="terminal">
+
+          <div>
+            <span class="command">
+              wireshark:~$ traffic_review
+            </span>
+          </div>
+
+          <div>
+            source    : captured network traffic
+          </div>
+
+          <div>
+            method    : packet inspection
+          </div>
+
+          <div>
+            protocols : TCP / UDP / DNS / HTTP
+          </div>
+
+          <br>
+
+          <div>
+            packet inspection
+            <span class="success">
+              COMPLETE
+            </span>
+          </div>
+
+          <div>
+            protocol review
+            <span class="success">
+              COMPLETE
+            </span>
+          </div>
+
+          <div>
+            relevant activity
+            <span class="warning">
+              REVIEWED
+            </span>
+          </div>
+
+          <div class="muted">
+            training exercise / captured traffic
+          </div>
+
+        </div>
+
+      </div>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     SKILLS
+========================================================= -->
+
+<section id="skills">
+
+  <div class="container">
+
+    <div class="section-label">
+      <span class="section-number">05</span>
+      <h2>Technical Skills</h2>
+    </div>
+
+
+    <div class="skills-grid">
+
+
+      <div class="skill-card">
+
+        <div class="skill-title">
+          SECURITY OPERATIONS
+        </div>
+
+        <div class="tags">
+
+          <span class="tag">SOC Operations</span>
+          <span class="tag">Security Monitoring</span>
+          <span class="tag">Incident Response</span>
+          <span class="tag">Alert Investigation</span>
+          <span class="tag">Incident Documentation</span>
+
+        </div>
+
+      </div>
+
+
+      <div class="skill-card">
+
+        <div class="skill-title">
+          SIEM &amp; LOG ANALYSIS
+        </div>
+
+        <div class="tags">
+
+          <span class="tag">Splunk</span>
+          <span class="tag">Windows Event Viewer</span>
+          <span class="tag">Log Analysis</span>
+          <span class="tag">Event Correlation</span>
+
+        </div>
+
+      </div>
+
+
+      <div class="skill-card">
+
+        <div class="skill-title">
+          NETWORK SECURITY
+        </div>
+
+        <div class="tags">
+
+          <span class="tag">Wireshark</span>
+          <span class="tag">Network Traffic Analysis</span>
+          <span class="tag">Firewall Policy Design</span>
+          <span class="tag">Proxy Concepts</span>
+
+        </div>
+
+      </div>
+
+
+      <div class="skill-card">
+
+        <div class="skill-title">
+          NETWORKING
+        </div>
+
+        <div class="tags">
+
+          <span class="tag">TCP/IP</span>
+          <span class="tag">IP Addressing</span>
+          <span class="tag">Subnetting</span>
+          <span class="tag">FLSM</span>
+          <span class="tag">VLSM</span>
+          <span class="tag">eNSP</span>
+          <span class="tag">Routers</span>
+
+        </div>
+
+      </div>
+
+
+      <div class="skill-card">
+
+        <div class="skill-title">
+          OPERATING SYSTEMS
+        </div>
+
+        <div class="tags">
+
+          <span class="tag">Windows</span>
+          <span class="tag">Linux</span>
+
+        </div>
+
+      </div>
+
+
+      <div class="skill-card">
+
+        <div class="skill-title">
+          SECURITY FUNDAMENTALS
+        </div>
+
+        <div class="tags">
+
+          <span class="tag">Security &amp; Attack Techniques</span>
+          <span class="tag">Digital Forensics Fundamentals</span>
+
+        </div>
+
+      </div>
+
+
+      <div class="skill-card">
+
+        <div class="skill-title">
+          PROGRAMMING
+        </div>
+
+        <div class="tags">
+
+          <span class="tag">C++</span>
+          <span class="tag">Data Structures</span>
+
+        </div>
+
+      </div>
+
+
+      <div class="skill-card">
+
+        <div class="skill-title">
+          PROFESSIONAL
+        </div>
+
+        <div class="tags">
+
+          <span class="tag">Analytical Thinking</span>
+          <span class="tag">Problem Solving</span>
+          <span class="tag">Teamwork</span>
+          <span class="tag">Attention to Detail</span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     EDUCATION
+========================================================= -->
+
+<section id="education">
+
+  <div class="container">
+
+    <div class="section-label">
+      <span class="section-number">06</span>
+      <h2>Education</h2>
+    </div>
+
+
+    <div class="education">
+
+      <div>
+
+        <h3>
+          Nile University — Giza, Egypt
+        </h3>
+
+        <p>
+          B.Sc. Computer Engineering. Relevant coursework:
+          Computer Networks, Introduction to Programming (C++),
+          Data Structures.
+        </p>
+
+      </div>
+
+      <div class="education-year">
+        YEAR 4 · IN PROGRESS
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     ADDITIONAL TRAINING
+========================================================= -->
+
+<section>
+
+  <div class="container">
+
+    <div class="section-label">
+      <span class="section-number">07</span>
+      <h2>Additional Training</h2>
+    </div>
+
+
+    <div class="training-extra">
+
+
+      <div class="extra-card">
+
+        <h3>
+          TryHackMe — Hands-on Cybersecurity Labs
+        </h3>
+
+        <p>
+          Completed practical networking and cybersecurity learning
+          exercises through an interactive training environment.
+          Strengthened applied understanding of networking and
+          security concepts relevant to SOC work.
+        </p>
+
+        <div class="extra-label">
+          PRACTICE AREAS
+        </div>
+
+        <div class="project-tools">
+          Networking · Security · Analysis
+        </div>
+
+      </div>
+
+
+      <div class="extra-card">
+
+        <h3>
+          Other Training Work
+        </h3>
+
+        <p>
+          Additional cybersecurity assignments completed during
+          the training track, covering security concepts and
+          practical fundamentals.
+        </p>
+
+        <div class="extra-label">
+          COVERED
+        </div>
+
+        <div class="project-tools">
+          Proxy Research · Windows Fundamentals · Security Assignments
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section id="contact" class="contact-section">
+
+  <div class="container">
+
+    <div class="contact-box">
+
+      <div class="section-number">
+        08 / CONTACT
+      </div>
+
+      <h2>
+        Need help analyzing security data?
+      </h2>
+
+      <p>
+        I am available for entry-level cybersecurity tasks involving
+        security logs, SIEM events, Windows events, and network
+        traffic analysis.
+      </p>
+
+      <div class="contact-actions">
+
+        <a
+          href="mailto:Adhamkhalid10c@gmail.com"
+          class="button button-primary">
+          Email me
+        </a>
+
+        <a
+          href="https://linkedin.com/in/adham-khalid-"
+          target="_blank"
+          rel="noopener"
+          class="button button-secondary">
+          LinkedIn
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+  <div class="container footer-inner">
+
+    <span>
+      Adham Khalid
+    </span>
+
+    <span>
+      Junior Cybersecurity Freelancer · SOC &amp; Security Monitoring
+    </span>
+
+    <span>
+      © 2026
+    </span>
+
+  </div>
+
+</footer>
+
+
+</body>
+</html>
